@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pulse & Pattern — Research on AI in Medicine</title>
+  <meta name="description" content="A dense, research-first news article experience about AI in medicine — built offline-first with vanilla HTML/CSS/JS." />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#A11D2E" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#/" aria-label="Pulse & Pattern home">Pulse &amp; Pattern</a>
+        <small id="edition">Edition</small>
+      </div>
+
+      <nav class="nav" aria-label="Top sections">
+        <a data-nav="latest" href="#/">Latest</a>
+        <a data-nav="research" href="#/section/research">Research</a>
+        <a data-nav="policy" href="#/section/policy">Policy</a>
+        <a data-nav="data" href="#/section/data">Data</a>
+      </nav>
+
+      <div class="header-actions">
+        <form id="headerSearchForm" class="search-inline" role="search" aria-label="Search stories">
+          <span class="sr-only">Search</span>
+          <input id="headerSearch" type="search" inputmode="search" autocomplete="off" placeholder="Search… ( / )" />
+        </form>
+
+        <button class="icon-btn" data-action="open-search" aria-label="Open search">Search</button>
+        <button class="icon-btn" data-action="toggle-sections" aria-label="Open sections">Sections</button>
+
+        <a class="icon-btn" data-nav="saved" href="#/saved" aria-label="Saved stories">
+          Saved <span id="savedCount" aria-live="polite"></span>
+        </a>
+
+        <button id="themeBtn" class="icon-btn" data-action="toggle-theme" aria-label="Switch theme">Dark</button>
+        <button class="primary-btn" data-action="open-subscribe">Subscribe</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="view" class="view"></div>
+  </main>
+
+  <div id="overlays"></div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div style="font-weight:600; margin-bottom: 6px">Pulse &amp; Pattern</div>
+        <div>Research-first reading experience. Save stories to read on this device.</div>
+      </div>
+      <div class="cluster">
+        <a href="#/about">About</a>
+        <a href="#/help">Help</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script>
+    // Optional: offline caching (works when served over http://, not file://)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
